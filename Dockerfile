@@ -1,6 +1,9 @@
 # Node.js 20 Alpine
 FROM node:20-alpine
 
+# Git ve gerekli build araclari yukle (baileys icin gerekli)
+RUN apk add --no-cache git python3 make g++
+
 # Calisma dizini
 WORKDIR /app
 
@@ -8,7 +11,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Bagimliliklari yukle
-RUN npm install
+RUN npm install --legacy-peer-deps
 
 # Kaynak kodlari kopyala
 COPY . .

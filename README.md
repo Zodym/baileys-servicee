@@ -2,9 +2,28 @@
 
 Bu servis, her kullanicinin kendi WhatsApp hesabini baglamasina olanak tanir. QR kodlar Firestore uzerinden frontend'e iletilir.
 
-## ONEMLI: Railway'de Deploy Etme
+## ONEMLI: Dosya Yapisi
 
-Railway tum repo'yu deploy etmeye calisiyor. `baileys-service` klasorunu **ayri bir GitHub repository** olarak yuklemeniz gerekiyor.
+GitHub repo'nuzdaki dosya yapisi su sekilde olmali:
+
+```
+my-whatsapp-service/
+├── src/
+│   ├── index.ts
+│   ├── firebase.ts
+│   └── whatsapp-manager.ts
+├── Dockerfile
+├── package.json
+├── tsconfig.json
+├── railway.json
+├── nixpacks.toml
+├── .env.example
+└── README.md
+```
+
+**DIKKAT**: `index.ts`, `firebase.ts` ve `whatsapp-manager.ts` dosyalari `src/` klasoru icinde olmali!
+
+## Railway'de Deploy Etme
 
 ### Adim 1: Ayri Repo Olusturun
 
